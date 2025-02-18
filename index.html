@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Page</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        .sidebar {
+            width: 30%;
+            height: 100%;
+            border-right: 2px solid #ccc;
+            position: fixed;
+        }
+
+        .main-content {
+            margin-left: 30%;
+            flex-grow: 1;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 3px 5px 5px #ccc;
+            padding: 16px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <iframe src="YOU-URL" width="100%"
+            style="height: 100%; min-height: 700px" frameborder="0"></iframe>
+    </div>
+    <div class="main-content">
+        <h1 class="title">Bienvenido a mi pagina de prueba</h1>
+        <div class="row">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828764.png" alt="Básico">
+                <h2>Plan Básico</h2>
+                <p>Acceso limitado a funciones</p>
+                <p class="price">$10/mes</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="Estándar">
+                <h2>Plan Estándar</h2>
+                <p>Acceso a la mayoría de las funciones</p>
+                <p class="price">$20/mes</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="Premium">
+                <h2>Plan Premium</h2>
+                <p>Acceso completo a todas las funciones</p>
+                <p class="price">$30/mes</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1828/1828912.png" alt="Empresarial">
+                <h2>Plan Empresarial</h2>
+                <p>Soluciones personalizadas para empresas</p>
+                <p class="price">$50/mes</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Avanzado">
+                <h2>Plan Avanzado</h2>
+                <p>Funciones avanzadas para usuarios exigentes</p>
+                <p class="price">$40/mes</p>
+            </div>
+            <div class="card">
+                <img src="https://cdn-icons-png.flaticon.com/512/189/189715.png" alt="Corporativo">
+                <h2>Plan Corporativo</h2>
+                <p>Soluciones completas para grandes empresas</p>
+                <p class="price">$60/mes</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ptYdHrppyUKKhxPZbxAvL"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    const crypto = require('crypto');
+
+    const secret = 'YOU_KEY';
+    const userId = current_user.id
+
+    const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
+</script>
+
+</html>
