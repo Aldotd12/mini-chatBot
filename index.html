@@ -53,17 +53,53 @@
         .row {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .title {
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 2px solid #ccc;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .card {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .card {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="sidebar">
-        <iframe src="YOU-URL" width="100%"
+        <iframe src="YOU_URL" width="100%"
             style="height: 100%; min-height: 700px" frameborder="0"></iframe>
     </div>
     <div class="main-content">
@@ -116,7 +152,7 @@
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ptYdHrppyUKKhxPZbxAvL"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
     const crypto = require('crypto');
 
-    const secret = 'YOU_KEY';
+    const secret = 'YOUR_KEY';
     const userId = current_user.id
 
     const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
