@@ -19,6 +19,7 @@
             height: 100%;
             border-right: 2px solid #ccc;
             position: fixed;
+            overflow-y: auto; /* Permitir scroll en la barra lateral */
         }
 
         .main-content {
@@ -26,7 +27,7 @@
             flex-grow: 1;
             padding: 20px;
             height: 100vh;
-            overflow-y: auto;
+            overflow-y: auto; /* Permitir scroll en el contenido principal */
         }
 
         .card {
@@ -63,6 +64,7 @@
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
+                overflow-y: auto; /* Permitir scroll en el cuerpo para pantallas pequeñas */
             }
 
             .sidebar {
@@ -71,11 +73,13 @@
                 position: relative;
                 border-right: none;
                 border-bottom: 2px solid #ccc;
+                overflow-y: auto; /* Permitir scroll en la barra lateral */
             }
 
             .main-content {
                 margin-left: 0;
                 padding: 10px;
+                overflow-y: auto; /* Permitir scroll en el contenido principal */
             }
 
             .card {
@@ -150,12 +154,6 @@
 </body>
 <script>
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ptYdHrppyUKKhxPZbxAvL"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
-    const crypto = require('crypto');
-
-    const secret = '6qd3cs0dlsr307drnmen55q8fhn3kuur';
-    const userId = current_user.id
-
-    const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
 </script>
 
 </html>
