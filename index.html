@@ -99,7 +99,7 @@
 
 <body>
     <div class="sidebar">
-        <iframe src="YOU_URL" width="100%"
+        <iframe src="https://www.chatbase.co/chatbot-iframe/ptYdHrppyUKKhxPZbxAvL" width="100%"
             style="height: 100%; min-height: 700px" frameborder="0"></iframe>
     </div>
     <div class="main-content">
@@ -152,7 +152,7 @@
     (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "ptYdHrppyUKKhxPZbxAvL"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
     const crypto = require('crypto');
 
-    const secret = 'YOUR_KEY';
+    const secret = '6qd3cs0dlsr307drnmen55q8fhn3kuur';
     const userId = current_user.id
 
     const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
